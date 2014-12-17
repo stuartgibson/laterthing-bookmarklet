@@ -10,25 +10,21 @@ request.onreadystatechange=function()
   {
     if (request.status == t)
     {
-      if ( request.responseText )
-      {
-        document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Saved!";
-      }
+      responseMessage = "Saved!"
     }
     else
     {
       if ( request.responseText )
       {
         result = JSON.parse(request.responseText);
-        console.log(result.errors[0]);
-        document.getElementById("laterthing-com-bookmarklet-p").innerHTML=result.errors[0];
+        responseMessage = result.errors[0];
       }
       else
       {
-        alert("huh?");
-        document.getElementById("laterthing-com-bookmarklet").innerHTML="Error Saving :("
+        responseMessage = "Error Saving :("
       }
     }
+    document.getElementById("laterthing-com-bookmarklet-p").innerHTML=responseMessage;
     setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
   }
 };
