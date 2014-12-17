@@ -2,11 +2,11 @@ laterThingDiv='<div  id="laterthing-com-bookmarklet" style="position:absolute;to
 
 document.body.innerHTML+=laterThingDiv;
 userKey = document.getElementById("laterthing-com-user-key").innerHTML;
-var request=new XMLHttpRequest;request.open("POST","http://laterthing.com/later-links/bookmarklet.json?link_url="+encodeURIComponent(location.href)+"&user_key="+encodeURIComponent(userKey)+"&page_title="+encodeURIComponent(document.title),true);
+var request=new XMLHttpRequest;request.open("POST","http://laterthing.com/later-links/bookmarklet.json?link_url="+encodeURIComponent(location.href)+"&user_key="+encodeURIComponent(userKey)+"x&page_title="+encodeURIComponent(document.title),true);
 
 request.onreadystatechange=function()
 {
-  var e=4,t=200,timeout=5000;
+  var e=4,t=200,timeout=2000;
   if ( request.readyState == e )
   {
     if (request.status == t)
