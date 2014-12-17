@@ -11,7 +11,6 @@ request.onreadystatechange=function()
     if ( request.responseText )
     {
       document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Saved!";
-      setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
   }
   else
@@ -21,14 +20,13 @@ request.onreadystatechange=function()
       result = JSON.parse(request.responseText);
       console.log(result.errors[0]);
       document.getElementById("laterthing-com-bookmarklet-p").innerHTML=result.errors[0];
-      setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
     else
     {
       alert("huh?");
       document.getElementById("laterthing-com-bookmarklet").innerHTML="Error Saving :("
-      setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
   }
+  setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
 };
 request.send(null);
