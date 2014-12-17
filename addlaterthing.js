@@ -20,6 +20,7 @@ request.onreadystatechange=function()
   }
   else
   {
+    console.log(request);
     document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Error saving :(";
     setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
   }
