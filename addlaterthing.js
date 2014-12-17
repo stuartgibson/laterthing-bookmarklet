@@ -18,5 +18,10 @@ request.onreadystatechange=function()
       document.getElementById("laterthing-com-bookmarklet").innerHTML="Saved!"
     }
   }
+  else
+  {
+    document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Error saving :(";
+    setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
+  }
 };
 request.send(null);
