@@ -22,6 +22,7 @@ request.onreadystatechange=function()
   {
     if ( request.responseText )
     {
+      console.log(request.responseText);
       errors = JSON.parse(request.responseText);
 
       document.getElementById("laterthing-com-bookmarklet-p").innerHTML=errors[0];
