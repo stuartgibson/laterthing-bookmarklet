@@ -13,10 +13,6 @@ request.onreadystatechange=function()
       document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Saved!";
       setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
-    else
-    {
-      document.getElementById("laterthing-com-bookmarklet").innerHTML="Saved!"
-    }
   }
   else
   {
@@ -29,6 +25,7 @@ request.onreadystatechange=function()
     }
     else
     {
+      alert("huh?");
       document.getElementById("laterthing-com-bookmarklet").innerHTML="Error Saving :("
       setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
