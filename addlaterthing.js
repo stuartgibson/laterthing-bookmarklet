@@ -2,7 +2,6 @@ laterThingDiv='<div  id="laterthing-com-bookmarklet" style=" position:absolute;r
 
 document.body.innerHTML+=laterThingDiv;
 userKey = document.getElementById("laterthing-com-user-key").innerHTML;
-console.log(userKey);
 var request=new XMLHttpRequest;request.open("POST","http://laterthing.com/later-links/bookmarklet.json?link_url="+encodeURIComponent(location.href)+"&user_key="+encodeURIComponent(userKey)+"&page_title="+encodeURIComponent(document.title),true);
 
 request.onreadystatechange=function()
