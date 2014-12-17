@@ -23,9 +23,9 @@ request.onreadystatechange=function()
     if ( request.responseText )
     {
       console.log(request.responseText);
-      errors = JSON.parse(request.responseText);
-      console.log(errors);
-      document.getElementById("laterthing-com-bookmarklet-p").innerHTML=errors[0];
+      result = JSON.parse(request.responseText);
+      console.log(result.errors);
+      document.getElementById("laterthing-com-bookmarklet-p").innerHTML=result.errors[0];
       setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
     else
