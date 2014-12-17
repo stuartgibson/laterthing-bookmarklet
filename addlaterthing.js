@@ -1,4 +1,4 @@
-laterThingDiv='<div  id="laterthing-com-bookmarklet" style="position:absolute;top:5px;left:2%;width:96%;height:2em;opacity:0.8;z-index:20001;              background:#69ABCD;text-align:center;border:solid 2px #2067B3;"><p id="laterthing-com-bookmarklet-p" style=" margin:0px;padding:0px;line-height:1em;              height:1em;position:absolute;top:50%;margin-top:-0.5em;width:100%;font-family: Helvetica, Arial, sans-serif;font-size: 20px;font-weight:lighter;color:#fff;">Saving LaterLink…</p></div>';
+laterThingDiv='<div  id="laterthing-com-bookmarklet" style="position:absolute;top:5px;left:2%;width:96%;height:2em;opacity:0.9;z-index:20001;              background:#69ABCD;text-align:center;border:solid 2px #2067B3;"><p id="laterthing-com-bookmarklet-p" style=" margin:0px;padding:0px;line-height:1em;              height:1em;position:absolute;top:50%;margin-top:-0.5em;width:100%;font-family: Helvetica, Arial, sans-serif;font-size: 20px;font-weight:lighter;color:#fff;">Saving LaterLink…</p></div>';
 
 document.body.innerHTML+=laterThingDiv;
 userKey = document.getElementById("laterthing-com-user-key").innerHTML;
