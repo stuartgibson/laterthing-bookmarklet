@@ -1,6 +1,3 @@
-alert("hi");
-
-/*
 laterThingDiv='
 <div  id="laterthing-com-bookmarklet"
       style=" position:absolute;
@@ -49,4 +46,3 @@ request.onreadystatechange=function()
   }
 };
 request.send(null);
-*/
