@@ -22,7 +22,8 @@ request.onreadystatechange=function()
   {
     if ( request.responseText )
     {
-      errors = JSON.parse(request.responseText.errors);
+      errors = JSON.parse(request.responseText);
+
       document.getElementById("laterthing-com-bookmarklet-p").innerHTML=errors[0];
       setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
     }
