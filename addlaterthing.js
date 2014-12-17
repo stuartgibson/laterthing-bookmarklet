@@ -5,7 +5,7 @@ var request=new XMLHttpRequest;request.open("POST","http://laterthing.com/later-
 
 request.onreadystatechange=function()
 {
-  var e=4,t=200;
+  var e=4,t=200,timeout=2000;
   if ( request.readyState == e )
   {
     if (request.status == t)
@@ -17,6 +17,7 @@ request.onreadystatechange=function()
       if ( request.responseText )
       {
         result = JSON.parse(request.responseText);
+        timeout=4000;
         responseMessage = result.errors[0];
       }
       else
@@ -25,7 +26,7 @@ request.onreadystatechange=function()
       }
     }
     document.getElementById("laterthing-com-bookmarklet-p").innerHTML=responseMessage;
-    setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
+    setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},timeout)
   }
 };
 request.send(null);
