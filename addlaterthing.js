@@ -6,27 +6,30 @@ var request=new XMLHttpRequest;request.open("POST","http://laterthing.com/later-
 request.onreadystatechange=function()
 {
   var e=4,t=200;
-  if ( request.readyState == e && request.status == t)
+  if ( request.readyState == e )
   {
-    if ( request.responseText )
+    if (request.status == t)
     {
-      document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Saved!";
-    }
-  }
-  else
-  {
-    if ( request.responseText )
-    {
-      result = JSON.parse(request.responseText);
-      console.log(result.errors[0]);
-      document.getElementById("laterthing-com-bookmarklet-p").innerHTML=result.errors[0];
+      if ( request.responseText )
+      {
+        document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Saved!";
+      }
     }
     else
     {
-      alert("huh?");
-      document.getElementById("laterthing-com-bookmarklet").innerHTML="Error Saving :("
+      if ( request.responseText )
+      {
+        result = JSON.parse(request.responseText);
+        console.log(result.errors[0]);
+        document.getElementById("laterthing-com-bookmarklet-p").innerHTML=result.errors[0];
+      }
+      else
+      {
+        alert("huh?");
+        document.getElementById("laterthing-com-bookmarklet").innerHTML="Error Saving :("
+      }
     }
+    setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
   }
-  setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
 };
 request.send(null);
