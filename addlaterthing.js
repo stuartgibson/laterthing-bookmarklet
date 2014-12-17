@@ -20,9 +20,16 @@ request.onreadystatechange=function()
   }
   else
   {
-    console.log(request);
-    document.getElementById("laterthing-com-bookmarklet-p").innerHTML="Error saving :(";
-    setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
+    if ( request.responseText )
+    {
+      document.getElementById("laterthing-com-bookmarklet-p").innerHTML=request.responseText.errors;
+      setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
+    }
+    else
+    {
+      document.getElementById("laterthing-com-bookmarklet").innerHTML="Error Saving :("
+      setTimeout(function(){document.getElementById("laterthing-com-bookmarklet").remove()},2000)
+    }
   }
 };
 request.send(null);
